@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextViewDelegate {
    
     @IBAction func onclickaddttext(_ sender: Any) {
       
-       
+       //Saju
         txt1.font = UIFont.systemFont(ofSize: 15)
         txt1.layer.borderWidth=1
         txt1.layer.borderColor=UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
