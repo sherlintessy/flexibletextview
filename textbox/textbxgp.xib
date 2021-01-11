@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="textbxgpview" customModule="textbox" customModuleProvider="target">
             <connections>
-                <outlet property="heightConstraint" destination="fMK-U6-hKN" id="PPw-p9-7R8"/>
+                <outlet property="heightConstraint" destination="rdp-mW-xwZ" id="wAV-I1-ZAo"/>
                 <outlet property="rotatebtn" destination="dpb-EY-qkm" id="9jN-b9-sfr"/>
                 <outlet property="txt1" destination="1rG-uN-phY" id="Gly-cz-9yM"/>
                 <outlet property="txtboxview" destination="iN0-l3-epB" id="6J0-oV-i9n"/>
-                <outlet property="widthConstraint" destination="shb-TI-htE" id="aWm-lw-aGR"/>
+                <outlet property="widthConstraint" destination="cfn-oc-Ok6" id="N0F-oN-AlL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,8 +26,8 @@
                     <rect key="frame" x="45" y="45" width="268" height="121"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="fMK-U6-hKN"/>
-                        <constraint firstAttribute="width" constant="110" id="shb-TI-htE"/>
+                        <constraint firstAttribute="width" constant="110" id="cfn-oc-Ok6"/>
+                        <constraint firstAttribute="height" constant="40" id="rdp-mW-xwZ"/>
                     </constraints>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

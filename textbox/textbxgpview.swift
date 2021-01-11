@@ -14,7 +14,8 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var rotatebtn: UIButton!
-    var panGesture = UIPanGestureRecognizer()
+    lazy var panGesture = UIPanGestureRecognizer()
+    var panGesture1 = UIPanGestureRecognizer()
     var location = CGPoint(x: 0, y: 0)
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -40,11 +41,13 @@ class textbxgpview: UIView ,UITextViewDelegate{
         txt1.autocorrectionType = UITextAutocorrectionType.no
         txt1.keyboardType = UIKeyboardType.default
         txt1.returnKeyType = UIReturnKeyType.done
-        panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.draggedView(_:)))
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView(_:)))
         rotatebtn.isUserInteractionEnabled = true
         rotatebtn.addGestureRecognizer(panGesture)
         
-        
+        panGesture1 = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView1(_:)))
+        txt1.isUserInteractionEnabled = true
+        txt1.addGestureRecognizer(panGesture1)
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
@@ -88,6 +91,9 @@ class textbxgpview: UIView ,UITextViewDelegate{
           let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
        
         heightConstraint.constant = newSize.height
+//        var newFrame = textView.frame
+//        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+//        textView.frame = newFrame
         layoutIfNeeded()
     }
    
@@ -123,4 +129,11 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBAction func scaleaction(_ sender: Any, forEvent event: UIEvent) {
         
     }
+    @objc func draggedView1(_ sender:UIPanGestureRecognizer){
+        self.bringSubviewToFront(txt1)
+        let translation = sender.translation(in: self)
+        txtboxview.center = CGPoint(x: txtboxview.center.x + translation.x, y: txtboxview.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: self)
+    }
+
 }
