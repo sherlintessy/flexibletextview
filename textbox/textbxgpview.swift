@@ -11,9 +11,9 @@ class textbxgpview: UIView ,UITextViewDelegate{
 
     @IBOutlet var txtboxview: UIView!
     @IBOutlet weak var txt1: UITextView!
-    @IBOutlet weak var rotatebtn: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rotatebtn: UIButton!
     var panGesture = UIPanGestureRecognizer()
     
     override init(frame: CGRect){
@@ -43,6 +43,7 @@ class textbxgpview: UIView ,UITextViewDelegate{
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.draggedView(_:)))
         rotatebtn.isUserInteractionEnabled = true
         rotatebtn.addGestureRecognizer(panGesture)
+        
         
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -83,38 +84,24 @@ class textbxgpview: UIView ,UITextViewDelegate{
     }
     func textViewDidChange(_ textView: UITextView) {
           let fixedWidth = textView.frame.size.width
-          //textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+       
           let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-          //var newFrame = textView.frame
-          //newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-          //textView.frame = newFrame
+       
         heightConstraint.constant = newSize.height
         layoutIfNeeded()
     }
    
-    @IBAction func touch(_ sender: Any) {
-        print("")
-    }
     
-    @IBAction func rotateaction(_ sender: Any) {
-        /*//if let button = sender as? UIButton {
-                // get the touch inside the button
-            //let touch = (event.touches(for: button)?.first() ?? as UITouch
-                // println the touch location
-            //print(touch.location(in: button))
-         }*/
-            txtboxview.transform=CGAffineTransform(rotationAngle:90)
-            
-    }
-    /*@objc func draggedView(_ sender:UIPanGestureRecognizer){
+    
+   
+    @objc func draggedView(_ sender:UIPanGestureRecognizer){
         self.bringSubviewToFront(rotatebtn)
         let translation = sender.translation(in: self)
         let r=30.5+(txt1.frame.height/2)
         let angle=2*asin(sqrt((translation.x*translation.x)+(translation.y*translation.y))/(2*r))
         txtboxview.transform=CGAffineTransform(rotationAngle: angle)
-       // txtboxview.center = CGPoint(x: txtboxgp.center.x + translation.x, y: txtboxgp.center.y + translation.y)
-        //sender.setTranslation(CGPoint.zero, in: self.view)
-    }*/
+       
+    }
 
     
 }

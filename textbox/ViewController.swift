@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var canvas: UIView!
     var panGesture = UIPanGestureRecognizer()
-    let txtboxgp = textbxgpview(frame: CGRect(x: 100, y: 150, width: 120, height: 70))
+    let txtboxgp = textbxgpview(frame: CGRect(x: 100, y: 150, width: 190, height: 120))
     
     //let txt1 =  UITextView(frame: CGRect(x: 100, y: 150, width: 110, height: 40))
     
