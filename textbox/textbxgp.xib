@@ -46,9 +46,6 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="rotateaction:" destination="-1" eventType="touchUpInside" id="hxk-Zb-9sd"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zY-nD-Gye">
                     <rect key="frame" x="164" y="166" width="30" height="5"/>
@@ -108,7 +105,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="rotateaction:" destination="-1" eventType="touchUpInside" id="bq2-9H-NJV"/>
+                        <action selector="scaleaction:forEvent:" destination="-1" eventType="touchDragExit" id="0kM-By-PH3"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-G9-rXB">

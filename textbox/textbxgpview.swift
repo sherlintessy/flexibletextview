@@ -15,7 +15,7 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var rotatebtn: UIButton!
     var panGesture = UIPanGestureRecognizer()
-    
+    var location = CGPoint(x: 0, y: 0)
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -102,6 +102,25 @@ class textbxgpview: UIView ,UITextViewDelegate{
         txtboxview.transform=CGAffineTransform(rotationAngle: angle)
        
     }
-
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            location = touch.location(in: self)
+           
+        }
+        print(location)
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            location = touch.location(in: self)
+         
+        }
+        print(location)
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+    }
+   
+    @IBAction func scaleaction(_ sender: Any, forEvent event: UIEvent) {
+        
+    }
 }
