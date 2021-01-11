@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E3385B8D25A834FA00840FBD /* textbxgp.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3385B8C25A834FA00840FBD /* textbxgp.xib */; };
+		E357238E25AB2A5400931B62 /* textbxgpview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357238D25AB2A5400931B62 /* textbxgpview.swift */; };
 		E36B84F325A60A8100BCE7B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B84F225A60A8100BCE7B2 /* AppDelegate.swift */; };
 		E36B84F525A60A8100BCE7B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B84F425A60A8100BCE7B2 /* SceneDelegate.swift */; };
 		E36B84F725A60A8100BCE7B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36B84F625A60A8100BCE7B2 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		E3385B8C25A834FA00840FBD /* textbxgp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = textbxgp.xib; sourceTree = "<group>"; };
+		E357238D25AB2A5400931B62 /* textbxgpview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textbxgpview.swift; sourceTree = "<group>"; };
 		E36B84EF25A60A8100BCE7B2 /* textbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36B84F225A60A8100BCE7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36B84F425A60A8100BCE7B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				E36B84FD25A60A8400BCE7B2 /* LaunchScreen.storyboard */,
 				E36B850025A60A8400BCE7B2 /* Info.plist */,
 				E3385B8C25A834FA00840FBD /* textbxgp.xib */,
+				E357238D25AB2A5400931B62 /* textbxgpview.swift */,
 			);
 			path = textbox;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				E36B84F725A60A8100BCE7B2 /* ViewController.swift in Sources */,
 				E36B84F325A60A8100BCE7B2 /* AppDelegate.swift in Sources */,
+				E357238E25AB2A5400931B62 /* textbxgpview.swift in Sources */,
 				E36B84F525A60A8100BCE7B2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
