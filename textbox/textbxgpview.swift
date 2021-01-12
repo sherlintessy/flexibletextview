@@ -16,6 +16,7 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBOutlet weak var rotatebtn: UIButton!
     lazy var panGesture = UIPanGestureRecognizer()
     var panGesture1 = UIPanGestureRecognizer()
+    var prelocation = CGPoint(x: 0, y: 0)
     var location = CGPoint(x: 0, y: 0)
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -110,10 +111,10 @@ class textbxgpview: UIView ,UITextViewDelegate{
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            location = touch.location(in: self)
+            prelocation = touch.location(in: self)
            
         }
-        print(location)
+        print(prelocation)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -127,7 +128,9 @@ class textbxgpview: UIView ,UITextViewDelegate{
     }
    
     @IBAction func scaleaction(_ sender: Any, forEvent event: UIEvent) {
-        
+        let translation=CGPoint(x: location.x-prelocation.x,y: prelocation.y-location.y)
+        let scale=CGPoint(x: widthConstraint.constant/translation.x, y: heightConstraint.constant/translation.y)
+        txtboxview.transform=CGAffineTransform(scaleX: scale.x, y: scale.y)
     }
     @objc func draggedView1(_ sender:UIPanGestureRecognizer){
         self.bringSubviewToFront(txt1)
