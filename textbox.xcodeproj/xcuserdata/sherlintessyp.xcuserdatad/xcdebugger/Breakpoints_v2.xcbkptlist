@@ -7,48 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BC0CEC80-246B-4C54-A5A9-EE67EFEF1195"
+            uuid = "7CDDD548-E4E8-40FC-9690-6881EA32630C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "textbox/textbxgpview.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "scaleaction(_:forEvent:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "draggedView(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96C8D65D-D803-4862-8A0A-BB4000714E6C"
+            uuid = "7B9FBD0E-E381-4C7B-922A-B3209F8A241B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "textbox/textbxgpview.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "touchesBegan(_:with:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "draggedView1(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E353A8B6-D240-4FC4-AA03-2DA55EF7247E"
+            uuid = "946F5CE2-757D-4B04-A3E0-3E748E6D4132"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "textbox/textbxgpview.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "touchesMoved(_:with:)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "draggedView2(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

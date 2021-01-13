@@ -14,10 +14,12 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var rotatebtn: UIButton!
+    @IBOutlet weak var corner1: UIButton!
     lazy var panGesture = UIPanGestureRecognizer()
-    var panGesture1 = UIPanGestureRecognizer()
-    var prelocation = CGPoint(x: 0, y: 0)
-    var location = CGPoint(x: 0, y: 0)
+    lazy var panGesture1 = UIPanGestureRecognizer()
+    lazy var panGesture2 = UIPanGestureRecognizer()
+    //var prelocation = CGPoint(x: 0, y: 0)
+    //var location = CGPoint(x: 0, y: 0)
     override init(frame: CGRect){
         super.init(frame: frame)
         commonInit()
@@ -49,6 +51,10 @@ class textbxgpview: UIView ,UITextViewDelegate{
         panGesture1 = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView1(_:)))
         txt1.isUserInteractionEnabled = true
         txt1.addGestureRecognizer(panGesture1)
+        
+        panGesture2 = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView2(_:)))
+        corner1.isUserInteractionEnabled = true
+        corner1.addGestureRecognizer(panGesture2)
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
@@ -109,11 +115,30 @@ class textbxgpview: UIView ,UITextViewDelegate{
         txtboxview.transform=CGAffineTransform(rotationAngle: angle)
        
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+   
+    @objc func draggedView1(_ sender:UIPanGestureRecognizer){
+        self.bringSubviewToFront(txt1)
+        let translation = sender.translation(in: self)
+        txtboxview.center = CGPoint(x: txtboxview.center.x + translation.x, y: txtboxview.center.y + translation.y)
+        sender.setTranslation(CGPoint.zero, in: self)
+    }
+    @objc func draggedView2(_ sender:UIPanGestureRecognizer){
+        self.bringSubviewToFront(corner1)
+        let translation = sender.translation(in: self)
+        heightConstraint.constant -= translation.y
+        widthConstraint.constant -= translation.x
+        txtboxview.center = CGPoint(x: txtboxview.center.x + translation.x, y: txtboxview.center.y + translation.y)
+        //let scale=CGPoint(x: widthConstraint.constant/translation.x, y: heightConstraint.constant/translation.y)
+        print(translation)
+        //print(scale)
+        //self.transform=CGAffineTransform(scaleX: scale.x, y: scale.y)
+    }
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             prelocation = touch.location(in: self)
            
         }
+        self.transform=CGAffineTransform(scaleX: 2, y: 2)
         print(prelocation)
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -130,13 +155,6 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBAction func scaleaction(_ sender: Any, forEvent event: UIEvent) {
         let translation=CGPoint(x: location.x-prelocation.x,y: prelocation.y-location.y)
         let scale=CGPoint(x: widthConstraint.constant/translation.x, y: heightConstraint.constant/translation.y)
-        txtboxview.transform=CGAffineTransform(scaleX: scale.x, y: scale.y)
-    }
-    @objc func draggedView1(_ sender:UIPanGestureRecognizer){
-        self.bringSubviewToFront(txt1)
-        let translation = sender.translation(in: self)
-        txtboxview.center = CGPoint(x: txtboxview.center.x + translation.x, y: txtboxview.center.y + translation.y)
-        sender.setTranslation(CGPoint.zero, in: self)
-    }
-
+        txt1.transform=CGAffineTransform(scaleX: scale.x, y: scale.y)
+    }*/
 }

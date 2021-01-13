@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var canvas: UIView!
     //pangesture1 declaration
-    let txtboxgp = textbxgpview(frame: CGRect(x: 100, y: 150, width: 190, height: 120))
+    let txtboxgp = textbxgpview(frame: CGRect(x: 100, y: 150, width: 200, height: 130))
     
     //let txt1 =  UITextView(frame: CGRect(x: 100, y: 150, width: 110, height: 40))
     
