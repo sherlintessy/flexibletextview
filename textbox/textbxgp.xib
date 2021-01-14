@@ -11,6 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="textbxgpview" customModule="textbox" customModuleProvider="target">
             <connections>
                 <outlet property="corner1" destination="7S7-Y3-9KP" id="pCC-IU-rye"/>
+                <outlet property="corner2" destination="J5l-pb-egM" id="Ety-Mq-PAz"/>
+                <outlet property="corner3" destination="eqZ-G9-rXB" id="T5S-N5-0ug"/>
+                <outlet property="corner4" destination="5wm-a3-pKc" id="2U1-p0-imI"/>
                 <outlet property="heightConstraint" destination="rdp-mW-xwZ" id="wAV-I1-ZAo"/>
                 <outlet property="rotatebtn" destination="dpb-EY-qkm" id="9jN-b9-sfr"/>
                 <outlet property="txt1" destination="1rG-uN-phY" id="Gly-cz-9yM"/>
@@ -84,7 +87,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wm-a3-pKc">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wm-a3-pKc">
                     <rect key="frame" x="35" y="85" width="10" height="10"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -94,8 +97,11 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scaleact:" destination="-1" eventType="touchUpInside" id="4I0-21-34p"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Y3-9KP">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S7-Y3-9KP">
                     <rect key="frame" x="35" y="35" width="10" height="10"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -105,8 +111,11 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scaleact:" destination="-1" eventType="touchUpInside" id="ykJ-9U-SPG"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-G9-rXB">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-G9-rXB">
                     <rect key="frame" x="155" y="85" width="10" height="10"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -116,8 +125,11 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scaleact:" destination="-1" eventType="primaryActionTriggered" id="eOk-TU-uuH"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5l-pb-egM">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5l-pb-egM">
                     <rect key="frame" x="155" y="35" width="10" height="10"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -127,6 +139,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scaleact:" destination="-1" eventType="touchUpInside" id="UO1-sk-jcL"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-EY-qkm">
                     <rect key="frame" x="95" y="115.5" width="10" height="10"/>
@@ -138,6 +153,10 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="rotateact:" destination="-1" eventType="primaryActionTriggered" id="1dV-hI-WwF"/>
+                        <action selector="rotateact:" destination="-1" eventType="touchDragOutside" id="ezr-xN-ffO"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -15,9 +15,13 @@ class textbxgpview: UIView ,UITextViewDelegate{
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var rotatebtn: UIButton!
     @IBOutlet weak var corner1: UIButton!
+    @IBOutlet weak var corner2: UIButton!
+    @IBOutlet weak var corner3: UIButton!
+    @IBOutlet weak var corner4: UIButton!
     lazy var panGesture = UIPanGestureRecognizer()
     lazy var panGesture1 = UIPanGestureRecognizer()
     lazy var panGesture2 = UIPanGestureRecognizer()
+    var cornerflag=0
     //var prelocation = CGPoint(x: 0, y: 0)
     //var location = CGPoint(x: 0, y: 0)
     override init(frame: CGRect){
@@ -44,17 +48,48 @@ class textbxgpview: UIView ,UITextViewDelegate{
         txt1.autocorrectionType = UITextAutocorrectionType.no
         txt1.keyboardType = UIKeyboardType.default
         txt1.returnKeyType = UIReturnKeyType.done
+       
+        
+        
+        
+    }
+    func move(){
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView1(_:)))
+        txt1.isUserInteractionEnabled = true
+        txt1.addGestureRecognizer(panGesture)
+    }
+    @IBAction func rotateact(_ sender: Any) {
+        //var button = sender as? UIButton
+        //button?.tag
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView(_:)))
         rotatebtn.isUserInteractionEnabled = true
         rotatebtn.addGestureRecognizer(panGesture)
-        
-        panGesture1 = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView1(_:)))
-        txt1.isUserInteractionEnabled = true
-        txt1.addGestureRecognizer(panGesture1)
-        
-        panGesture2 = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView2(_:)))
-        corner1.isUserInteractionEnabled = true
-        corner1.addGestureRecognizer(panGesture2)
+    }
+    
+    @IBAction func scaleact(_ sender: Any) {
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(textbxgpview.draggedView2(_:)))
+        let button = sender as? UIButton
+        print(button?.tag)
+        if button?.tag==1{
+           corner1.isUserInteractionEnabled = true
+           corner1.addGestureRecognizer(panGesture)
+            cornerflag=1
+        }
+        else if button?.tag==2{
+           corner2.isUserInteractionEnabled = true
+           corner2.addGestureRecognizer(panGesture)
+            cornerflag=2
+        }
+        else if button?.tag==3{
+           corner3.isUserInteractionEnabled = true
+           corner3.addGestureRecognizer(panGesture)
+            cornerflag=3
+        }
+        else if button?.tag==4{
+           corner4.isUserInteractionEnabled = true
+           corner4.addGestureRecognizer(panGesture)
+            cornerflag=4
+        }
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
@@ -113,7 +148,7 @@ class textbxgpview: UIView ,UITextViewDelegate{
         let r=30.5+(txt1.frame.height/2)
         let angle=2*asin(sqrt((translation.x*translation.x)+(translation.y*translation.y))/(2*r))
         txtboxview.transform=CGAffineTransform(rotationAngle: angle)
-       
+        self.move()
     }
    
     @objc func draggedView1(_ sender:UIPanGestureRecognizer){
@@ -124,12 +159,16 @@ class textbxgpview: UIView ,UITextViewDelegate{
     }
     @objc func draggedView2(_ sender:UIPanGestureRecognizer){
         self.bringSubviewToFront(corner1)
+        self.bringSubviewToFront(corner2)
+        self.bringSubviewToFront(corner3)
+        self.bringSubviewToFront(corner4)
         let translation = sender.translation(in: self)
         heightConstraint.constant -= translation.y
         widthConstraint.constant -= translation.x
         txtboxview.center = CGPoint(x: txtboxview.center.x + translation.x, y: txtboxview.center.y + translation.y)
+        self.move()
         //let scale=CGPoint(x: widthConstraint.constant/translation.x, y: heightConstraint.constant/translation.y)
-        print(translation)
+        //print(translation)
         //print(scale)
         //self.transform=CGAffineTransform(scaleX: scale.x, y: scale.y)
     }
